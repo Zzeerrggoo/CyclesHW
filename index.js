@@ -20,22 +20,76 @@
 // пользователем числу.
 //
 
-const num = Number(prompt('Enter the number'));
-const power = Number(prompt('Enter the power'));
-const flag = power > 0;
+const num1 = Number(prompt('Enter the first number'));
+const num2 = Number(prompt('Enter the second number'));
 
-let res = 1;
-let counter = 0;
+const gcd = euclid(num1, num2);
+const arr = eratosthenesSieve(1000);
 
-while (counter++ < Math.abs(power)) {
-  res *= num;
+alert(gcd);
+
+alert(factorize(gcd, arr));
+
+
+
+
+
+function eratosthenesSieve(n) {
+
+  const arr = new Array(n);
+  arr.fill(true, 0, n);
+
+  let i = 2;
+  while (i * i < n) {
+    if (arr[i]) {
+      let j = i * i;
+
+      while (j <= n) {
+        arr[j] = false;
+        j += i;
+      }
+    }
+    ++i;
+  }
+  return arr;
 }
 
-alert(flag ? res : 1 / res);
+function euclid(a, b) {
 
+  if (a > b) {
+    [a, b] = [b, a];
+  }
 
+  while (a !== 0) {
+    b %= a;
+    [a, b] = [b, a];
+  }
 
+  return b;
+}
 
+function factorize(n, divisors) {
+
+  let i = 2;
+  const res = [];
+
+  while (Math.pow(i, 2) <= n) {
+
+    if (divisors[i]) {
+      if (n % i === 0) {
+        res.push(i);
+        n /= i;
+      } else
+        i++;
+    }
+  }
+
+  if (n !== 1)
+    res.push(n);
+
+  return res;
+
+}
 
 
 
