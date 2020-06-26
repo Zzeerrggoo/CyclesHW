@@ -20,15 +20,18 @@
 // пользователем числу.
 //
 
-const totalNumber = Number(prompt('Enter the number'));
-let counter = -1;
-const res = [];
+const num = Number(prompt('Enter the number'));
+const power = Number(prompt('Enter the power'));
+const flag = power > 0;
 
-while (counter++ < totalNumber) {
-  res[counter] = counter;
+let res = 1;
+let counter = 0;
+
+while (counter++ < Math.abs(power)) {
+  res *= num;
 }
 
-alert(res);
+alert(flag ? res : 1 / res);
 
 
 
