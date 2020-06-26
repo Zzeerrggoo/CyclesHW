@@ -18,17 +18,17 @@
 //  ■■ Задания, в которых необходимо использовать FOR.
 // 3. Вывести все числа от 1 до 100, которые кратные указанному
 // пользователем числу.
+//
 
-const totalNumber = Number(prompt('Enter the number of #'));
-let counter = 0;
-let res = '';
+const totalNumber = Number(prompt('Enter the number'));
+let counter = -1;
+const res = [];
 
 while (counter++ < totalNumber) {
-  res += '#';
+  res[counter] = counter;
 }
 
 alert(res);
-
 
 
 
