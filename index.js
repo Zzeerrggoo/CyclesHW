@@ -20,22 +20,13 @@
 // пользователем числу.
 //
 
-let num1 = Number(prompt('Enter the first number'));
-let num2 = Number(prompt('Enter the second number'));
+const fact = prompt('Enter a number');
 
-if (num1 > num2) {
-  [num1, num2] = [num2, num1];
-}
+let i = 0;
+let res = 1;
 
-let i = 2;
-let j = 0;
-const res = [];
-
-while (i <= num1) {
-  if (num1 % i === 0 && num2 % i === 0) {
-    res.push(i, -i);
-  }
-  ++i;
+while (++i <= fact) {
+  res *= i;
 }
 
 alert(res);
