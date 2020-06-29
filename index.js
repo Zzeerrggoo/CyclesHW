@@ -10,15 +10,15 @@
 // пользователем числу.
 //
 
-let isSolved = false;
+
+let thousand  = 1000;
+let counter = 0;
 
 do {
 
-  isSolved = Number(prompt('What is the answer to  "2 + 2 * 2" ???')) === 6;
-  if (!isSolved) {
-    alert('Try again !');
-  }
+  thousand /= 2;
+  ++counter;
 
-} while (!isSolved);
+} while (thousand > 50);
 
-alert('Completed !');
+alert(`The number = ${thousand}, counter = ${counter}`);
