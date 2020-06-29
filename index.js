@@ -1,24 +1,18 @@
 'use strict';
 
-//  ■■ Задания, в которых необходимо использовать DO WHILE.
-// 1. Предлагать пользователю решить пример 2 + 2 * 2 до тех
-// пор, пока он не решит его правильно.
-// 2. Делить число 1000 на 2 до тех пор, пока не получится число
-// меньше 50. Вывести это число и сколько делений произвели.
 //  ■■ Задания, в которых необходимо использовать FOR.
 // 3. Вывести все числа от 1 до 100, которые кратные указанному
 // пользователем числу.
 //
 
+const userNum = Number(prompt('Enter your number'));
+const res = [];
+const DELIMITER = 100;
 
-let thousand  = 1000;
-let counter = 0;
 
-do {
+//Use Math.abs(...) for negative numbers
+for (let i = Math.abs(userNum); i <= DELIMITER; i += Math.abs(userNum)) {
+  res.push(i);
+}
 
-  thousand /= 2;
-  ++counter;
-
-} while (thousand > 50);
-
-alert(`The number = ${thousand}, counter = ${counter}`);
+alert(res);
